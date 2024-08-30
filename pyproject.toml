@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=67.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyangus"
+version = "1.1.2"
+authors = [
+  { name="Lucas Accioly", email="lucas.accioly@fabricadenegocio.com.br" },
+]
+description = "Lib PyAngus para conexão com o Portal"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "requests>=2.28",
+  "pandas>=1.5.3"
+]
+
+[project.urls]
+Homepage = "https://gitlab.com/fabricadenegocio/angusgdl/pyangus"

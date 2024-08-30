@@ -1,0 +1,91 @@
+Metadata-Version: 2.1
+Name: pyangus
+Version: 1.1.2
+Summary: Lib PyAngus para conexão com o Portal
+Author-email: Lucas Accioly <lucas.accioly@fabricadenegocio.com.br>
+License: MIT License
+        
+        Copyright (c) 2023 Fábrica de Negócio
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Project-URL: Homepage, https://gitlab.com/fabricadenegocio/angusgdl/pyangus
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# PyAngus
+
+## Name
+PyAngus Portal Driver
+
+## Description
+Lib PyAngus para o Portal do Angus
+
+## Installation
+```
+pip install -r requirements.txt
+```
+ou
+```
+pipenv install --dev
+```
+
+## Documentação
+Para ver a doc completa do código rodar:
+```
+pdoc --docformat numpy pyangus
+```
+ou acessar :
+```
+./docs/
+```
+
+## Usage
+```
+pip install git+https://gitlab.com/fabricadenegocio/angusgdl/pyangus.git
+```
+```
+from pyangus import AngusClient, AngusRPA
+```
+AngusClient:
+```
+token = ''
+ang = AngusClient(token_collection=token, host="optional")
+ang.info()
+ang.query(filter_search="", offset=0, limit=10)
+ang.ingest(dataframe)
+```
+**obs: o parametro filter_search em ang.query pode usar os operadores == != >= > < <= and or**
+
+Para o modulo de RPA usar o decorator em cima da função de RPA com o nome da coleção no parâmetro collection_name ex:
+```
+@AngusRPA(token="asdtoken", host="optional")
+def rpa():
+    pass
+```
+
+
+## Roadmap
+If you have ideas for releases in the future, it is a good idea to list them in the README.
+
+## License
+MIT License
